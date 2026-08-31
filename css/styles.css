@@ -1,0 +1,232 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Bluu Next Cyrillic';
+  font-weight: 900;
+  src: url('../fonts/Bluu-Next-Cyrillic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Bluu Next Cyrillic';
+  font-weight: 700;
+  src: url('../fonts/Bluu-Next-Cyrillic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-weight: 700;
+  src: url('../fonts/Inter-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-weight: 500;
+  src: url('../fonts/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-weight: 400;
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+
+:root {
+  --color-primary: #fabf59;
+  --color-secondary: #1d1d1d;
+  --primary-font: 'Bluu Next Cyrillic', sans-serif;
+  --secondary-font: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  background-color: var(--color-secondary);
+}
+
+.container {
+  width: 100%;
+  max-width: 1288px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.btn {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--color-secondary);
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 18px 27px;
+  width: 320px;
+  height: 59px;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+/* Hero Section */
+
+.hero-section {
+  padding: 100px 0px 253px 0px;
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--color-secondary) 15.53%,
+      rgba(29, 29, 29, 0.82) 39.12%,
+      rgba(29, 29, 29, 0) 82.77%,
+      var(--color-secondary) 100%
+    ),
+    url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-section__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section__title {
+  margin-bottom: 80px;
+  max-width: 890px;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Chose Section */
+
+.chose-section {
+  padding: 0px 0px 100px 0px;
+  background: var(--color-secondary);
+}
+
+.chose-section__characters {
+  display: flex;
+  gap: 20px;
+}
+
+.chose-section__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chose-section__image {
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+}
+
+/* Change Section */
+
+.change-section {
+}
+
+.change-section__title {
+  font-size: 80px;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.change-section__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.change-section__card {
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 295px;
+  height: 452px;
+  border-radius: 20px;
+  background: linear-gradient(
+    0.68deg,
+    #0f0f0f -1.51%,
+    rgba(15, 15, 15, 0.74) 51.87%,
+    rgba(15, 15, 15, 0) 86.41%
+  );
+}
+
+.change-section__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.change-section__name {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.change-section__text {
+  font-family: var(--color-secondary);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+
+.change-section__btn {
+}

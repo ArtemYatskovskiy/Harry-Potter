@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harry Potter</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero-section" id="hero-section">
+        <div class="container">
+          <div class="hero-section__content">
+            <h1 class="hero-section__title">
+              Ласкаво просимо у світ Гаррі Поттера
+            </h1>
+            <button class="btn" id="hero-btn">Показати всіх персонажів</button>
+          </div>
+        </div>
+      </section>
+      <section class="chose-section is-hidden" id="chose-section">
+        <div class="container">
+          <ul class="chose-section__characters">
+            <li class="chose-section__card">
+              <img
+                class="chose-section__image"
+                src="./images/students.jpg"
+                alt=""
+              /><button class="btn" id="stud-btn">Студенти Гоґвортсу</button>
+            </li>
+            <li class="chose-section__card">
+              <img
+                class="chose-section__image"
+                src="./images/staff.jpg"
+                alt=""
+              /><button class="btn" id="staff-btn">
+                Співробітники Гоґвортсу
+              </button>
+            </li>
+            <li class="chose-section__card">
+              <img
+                class="chose-section__image"
+                src="./images/chars_house.jpg"
+                alt=""
+              /><button class="btn" id="chars-house-btn">
+                Персонажі в певному будинку
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="change-section is-hidden" id="change-section">
+        <div class="container">
+          <button class="btn" id="back-btn"></button>
+          <h1 class="change-section__title" id="change-title"></h1>
+          <ul class="change-section__list" id="change-list"></ul>
+          <button class="btn" id="load-more-btn">Завантажити більше</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
