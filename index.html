@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harry Potter</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -24,15 +25,17 @@
             <li class="chose-section__card">
               <img
                 class="chose-section__image"
+                srcset="./images/students.jpg 1x, ./images/students@2x.jpg 2x"
                 src="./images/students.jpg"
-                alt=""
+                alt="Студенти Гоґвортсу"
               /><button class="btn" id="stud-btn">Студенти Гоґвортсу</button>
             </li>
             <li class="chose-section__card">
               <img
                 class="chose-section__image"
+                srcset="./images/staff.jpg 1x, ./images/staff@2x.jpg 2x"
                 src="./images/staff.jpg"
-                alt=""
+                alt="Співробітники Гоґвортсу"
               /><button class="btn" id="staff-btn">
                 Співробітники Гоґвортсу
               </button>
@@ -40,8 +43,12 @@
             <li class="chose-section__card">
               <img
                 class="chose-section__image"
-                src="./images/chars_house.jpg"
-                alt=""
+                srcset="
+                  ./images/chars-house.jpg    1x,
+                  ./images/chars-house@2x.jpg 2x
+                "
+                src="./images/chars-house.jpg"
+                alt="Персонажі в певному будинку"
               /><button class="btn" id="chars-house-btn">
                 Персонажі в певному будинку
               </button>
@@ -49,17 +56,59 @@
           </ul>
         </div>
       </section>
-
       <section class="change-section is-hidden" id="change-section">
         <div class="container">
-          <button class="btn" id="back-btn"></button>
           <h1 class="change-section__title" id="change-title"></h1>
+          <ul class="houses-list is-hidden" id="houses-list">
+            <li>
+              <button class="house-btn active" id="gryffindor-btn">
+                <img
+                  src="./images/gryffindor-logo.svg"
+                  alt="Ґрифіндор логотип"
+                  width="35"
+                  height="38"
+                />Gryffindor
+              </button>
+            </li>
+            <li>
+              <button class="house-btn" id="slytherin-btn">
+                <img
+                  src="./images/slytherin-logo.svg"
+                  alt="Слизерин логотип"
+                  width="35"
+                  height="38"
+                />Slytherin
+              </button>
+            </li>
+            <li>
+              <button class="house-btn" id="ravenclaw-btn">
+                <img
+                  src="./images/ravenclaw-logo.svg"
+                  alt="Рейвенклов логотип"
+                  width="35"
+                  height="38"
+                />Ravenclaw
+              </button>
+            </li>
+            <li>
+              <button class="house-btn" id="hufflepuff-btn">
+                <img
+                  src="./images/hufflepuff-logo.svg"
+                  alt="Гафелпаф логотип"
+                  width="35"
+                  height="38"
+                />Hufflepuff
+              </button>
+            </li>
+          </ul>
           <ul class="change-section__list" id="change-list"></ul>
-          <button class="btn" id="load-more-btn">Завантажити більше</button>
+          <button class="load-more-btn btn" id="load-more-btn">
+            Завантажити більше
+          </button>
+          <button class="back-btn btn" id="back-btn">Назад</button>
         </div>
       </section>
     </main>
-
     <script src="./js/script.js"></script>
   </body>
 </html>

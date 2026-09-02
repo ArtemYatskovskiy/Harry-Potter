@@ -1,7 +1,11 @@
+//Змінні
+
 let arrCharacters = [];
 let currentList = [];
 let startingIndex = 0;
 let endingIndex = 8;
+
+// DOM-елементи
 
 const heroSection = document.getElementById('hero-section');
 const heroButton = document.getElementById('hero-btn');
@@ -17,14 +21,21 @@ const changeList = document.getElementById('change-list');
 const backButton = document.getElementById('back-btn');
 const loadMoreButton = document.getElementById('load-more-btn');
 
+const housesList = document.getElementById('houses-list');
+const gryffindorButton = document.getElementById('gryffindor-btn');
+const slytherinButton = document.getElementById('slytherin-btn');
+const ravenclawButton = document.getElementById('ravenclaw-btn');
+const hufflepuffButton = document.getElementById('hufflepuff-btn');
+
+// Отримання данних
+
 async function getCharactersData() {
-  const res = await fetch('https://hp-api.onrender.com/api/characters');
   try {
+    const res = await fetch('https://hp-api.onrender.com/api/characters');
     arrCharacters = await res.json();
     return arrCharacters;
-  } catch {
-    changeList.innerHTML =
-      '<p class="error-msg">Сталася помилка під час завантаження персонажів</p>';
+  } catch (err) {
+    console.error('Сталася помилка під час завантаження персонажів:', err);
     return [];
   }
 }
@@ -35,6 +46,8 @@ async function ensureData() {
   }
   return arrCharacters;
 }
+
+// Рендер персонажів
 
 function showSection(section) {
   [heroSection, choseSection, changeSection].forEach(s =>
@@ -72,11 +85,38 @@ function renderCharacters() {
   <img class="change-section__image" src="${ch.image}" alt="${ch.name}" />
   <h2 class="change-section__name">${ch.name}</h2>
   <div class="change-section__text">
-    <p>${ch.alternate_names[0]}</p>
-    <p>${ch.house}</p>
-    <p>${ch.dateOfBirth}</p>
+    <p>${ch.alternate_names[0] || ''}</p>
+    <p>${ch.house || ''}</p>
+    <p>${ch.dateOfBirth || ''}</p>
   </div>
-  <button class="change-section__btn">Більше інформації →</button>
+  <button class="change-section__btn">Більше інформації<img src="./images/arrow.svg" alt="" width="30" height="20" />
+      <div class="hover-card">
+      <p>Name: <span>${ch.name}</span></p>
+      <p>
+        Alternate names: <span>${ch.alternate_names.join(', ') || '-'}</span>
+      </p>
+      <p>Species: <span>${ch.species}</span></p>
+      <p>Gender: <span>${ch.gender}</span></p>
+      <p>House: <span>${ch.house}</span></p>
+      <p>Date of birth: <span>${ch.dateOfBirth}</span></p>
+      <p>Year of birth: <span>${ch.yearOfBirth}</span></p>
+      <p>Wizard: <span>${ch.wizard}</span></p>
+      <p>Ancestry: <span>${ch.ancestry}</span></p>
+      <p>Eye colour: <span>${ch.eyeColour}</span></p>
+      <p>Hair colour: <span>${ch.hairColour}</span></p>
+      <p>
+        Wand:
+        <span
+          >${ch.wand.wood}, core: ${ch.wand.core}, length:
+          ${ch.wand.length}</span
+        >
+      </p>
+      <p>Patronus: <span>${ch.patronus}</span></p>
+      <p>Hogwarts student: <span>${ch.hogwartsStudent}</span></p>
+      <p>Hogwarts staff: <span>${ch.hogwartsStaff}</span></p>
+      <p>Actor: <span>${ch.actor}</span></p>
+      <p>Alive: <span>${ch.alive}</span></p>
+    </div></button>
 </li>`,
     )
     .join('');
@@ -92,13 +132,52 @@ function renderCharacters() {
   }
 }
 
+// Фільтр по Будинку
+
+function setActiveHouseBtn(activeBtn) {
+  [
+    gryffindorButton,
+    slytherinButton,
+    ravenclawButton,
+    hufflepuffButton,
+  ].forEach(btn => btn.classList.remove('active'));
+  activeBtn.classList.add('active');
+}
+
+async function filterHouse(house, btn) {
+  setActiveHouseBtn(btn);
+  const characters = await ensureData();
+  const filtered = characters.filter(ch => ch.house === house);
+  showFiltered(filtered, 'Персонажі в певному будинку');
+}
+
+gryffindorButton.addEventListener('click', () =>
+  filterHouse('Gryffindor', gryffindorButton),
+);
+slytherinButton.addEventListener('click', () =>
+  filterHouse('Slytherin', slytherinButton),
+);
+ravenclawButton.addEventListener('click', () =>
+  filterHouse('Ravenclaw', ravenclawButton),
+);
+hufflepuffButton.addEventListener('click', () =>
+  filterHouse('Hufflepuff', hufflepuffButton),
+);
+
+charsHouseButton.addEventListener('click', async () => {
+  housesList.classList.remove('is-hidden');
+  await filterHouse('Gryffindor', gryffindorButton);
+});
+
 studentsButton.addEventListener('click', async () => {
+  housesList.classList.add('is-hidden');
   const characters = await ensureData();
   const students = characters.filter(ch => ch.hogwartsStudent);
   showFiltered(students, 'Студенти Гоґвортсу');
 });
 
 staffButton.addEventListener('click', async () => {
+  housesList.classList.add('is-hidden');
   const characters = await ensureData();
   const staff = characters.filter(ch => ch.hogwartsStaff);
   showFiltered(staff, 'Співробітники Гоґвортсу');
