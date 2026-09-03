@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  max-width: 1288px;
+  margin: 0 auto;
+  padding: 0 12px;
+
+  @media screen and (min-width: $bp-desktop) {
+    padding: 0 24px;
+  }
+}
+
+.is-hidden {
+  display: none;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

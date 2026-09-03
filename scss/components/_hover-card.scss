@@ -1,0 +1,35 @@
+.hover-card {
+  padding: 10px;
+  position: absolute;
+  color: #fff;
+  text-align: left;
+  font-size: 7px;
+  line-height: 1.25;
+  border-radius: 10px;
+  width: 148px;
+  height: 226px;
+  z-index: 3;
+  bottom: -22px;
+  left: -22px;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-primary);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+
+  @media screen and (min-width: $bp-desktop) {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    border-radius: 20px;
+    width: 295px;
+    height: 452px;
+  }
+
+  & span {
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+}
