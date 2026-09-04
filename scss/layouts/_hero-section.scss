@@ -17,6 +17,10 @@
   background-position: center;
 
   @media screen and (min-width: $bp-desktop) {
+    padding: 67px 0px 189px 0px;
+  }
+
+  @media screen and (min-width: $bp-desktop) {
     padding: 100px 0px 253px 0px;
   }
 
@@ -31,16 +35,20 @@
     margin-bottom: 80px;
     max-width: 890px;
     font-family: var(--primary-font);
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-primary);
 
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 53px;
+      line-height: 1.25;
+    }
+
     @media screen and (min-width: $bp-desktop) {
       font-size: 80px;
-      line-height: 1.25;
     }
   }
 }

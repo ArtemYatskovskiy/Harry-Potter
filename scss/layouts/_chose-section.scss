@@ -2,15 +2,22 @@
   padding: 0px 0px 50px 0px;
   background: var(--color-secondary);
 
+  @media screen and (min-width: $bp-tablet) {
+    padding: 0px 0px 67px 0px;
+  }
+
   @media screen and (min-width: $bp-desktop) {
     padding: 0px 0px 100px 0px;
   }
 
   &__characters {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 10px;
 
-    @media screen and (min-width: $bp-desktop) {
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
       gap: 20px;
     }
   }
@@ -30,9 +37,14 @@
   &__image {
     border-radius: 20px;
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     height: 100%;
-    max-height: 300px;
+    max-height: 200px;
+
+    @media screen and (min-width: $bp-tablet) {
+      max-width: 267px;
+      max-height: 267px;
+    }
 
     @media screen and (min-width: $bp-desktop) {
       max-width: 400px;

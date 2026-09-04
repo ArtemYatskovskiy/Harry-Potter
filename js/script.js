@@ -85,37 +85,37 @@ function renderCharacters() {
   <img class="change-section__image" src="${ch.image}" alt="${ch.name}" />
   <h2 class="change-section__name">${ch.name}</h2>
   <div class="change-section__text">
-    <p>${ch.alternate_names[0] || ''}</p>
-    <p>${ch.house || ''}</p>
-    <p>${ch.dateOfBirth || ''}</p>
+    <p>${ch.alternate_names[0] || 'Null'}</p>
+    <p>${ch.house || 'Null'}</p>
+    <p>${ch.dateOfBirth || 'Null'}</p>
   </div>
   <button class="change-section__btn">Більше інформації<img src="./images/arrow.svg" alt="" width="30" height="20" />
       <div class="hover-card">
       <p>Name: <span>${ch.name}</span></p>
       <p>
-        Alternate names: <span>${ch.alternate_names.join(', ') || '-'}</span>
+        Alternate names: <span>${ch.alternate_names.join(', ') || 'Null'}</span>
       </p>
-      <p>Species: <span>${ch.species}</span></p>
-      <p>Gender: <span>${ch.gender}</span></p>
-      <p>House: <span>${ch.house}</span></p>
-      <p>Date of birth: <span>${ch.dateOfBirth}</span></p>
-      <p>Year of birth: <span>${ch.yearOfBirth}</span></p>
-      <p>Wizard: <span>${ch.wizard}</span></p>
-      <p>Ancestry: <span>${ch.ancestry}</span></p>
-      <p>Eye colour: <span>${ch.eyeColour}</span></p>
-      <p>Hair colour: <span>${ch.hairColour}</span></p>
+      <p>Species: <span class="text-capitalize">${ch.species || 'Null'}</span></p>
+      <p>Gender: <span class="text-capitalize">${ch.gender || 'Null'}</span></p>
+      <p>House: <span>${ch.house || 'Null'}</span></p>
+      <p>Date of birth: <span>${ch.dateOfBirth || 'Null'}</span></p>
+      <p>Year of birth: <span>${ch.yearOfBirth || 'Null'}</span></p>
+      <p>Wizard: <span class="text-capitalize">${ch.wizard || 'Null'}</span></p>
+      <p>Ancestry: <span class="text-capitalize">${ch.ancestry || 'Null'}</span></p>
+      <p>Eye colour: <span class="text-capitalize">${ch.eyeColour || 'Null'}</span></p>
+      <p>Hair colour: <span class="text-capitalize">${ch.hairColour || 'Null'}</span></p>
       <p>
         Wand:
-        <span
-          >${ch.wand.wood}, core: ${ch.wand.core}, length:
-          ${ch.wand.length}</span
+        <span class="text-capitalize"
+          >${ch.wand.wood || 'Null'}, core: ${ch.wand.core || 'Null'}, length:
+          ${ch.wand.length || 'Null'}</span
         >
       </p>
-      <p>Patronus: <span>${ch.patronus}</span></p>
-      <p>Hogwarts student: <span>${ch.hogwartsStudent}</span></p>
-      <p>Hogwarts staff: <span>${ch.hogwartsStaff}</span></p>
-      <p>Actor: <span>${ch.actor}</span></p>
-      <p>Alive: <span>${ch.alive}</span></p>
+      <p>Patronus: <span class="text-capitalize">${ch.patronus || 'Null'}</span></p>
+      <p>Hogwarts student: <span class="text-capitalize">${ch.hogwartsStudent || 'Null'}</span></p>
+      <p>Hogwarts staff: <span class="text-capitalize">${ch.hogwartsStaff || 'Null'}</span></p>
+      <p>Actor: <span>${ch.actor || 'Null'}</span></p>
+      <p>Alive: <span class="text-capitalize">${ch.alive || 'Null'}</span></p>
     </div></button>
 </li>`,
     )
@@ -148,7 +148,7 @@ async function filterHouse(house, btn) {
   setActiveHouseBtn(btn);
   const characters = await ensureData();
   const filtered = characters.filter(ch => ch.house === house);
-  showFiltered(filtered, 'Персонажі в певному будинку');
+  showFiltered(filtered, `Персонажі в певному будинку`);
 }
 
 gryffindorButton.addEventListener('click', () =>

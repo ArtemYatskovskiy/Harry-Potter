@@ -1,0 +1,27 @@
+.snich {
+  position: absolute;
+  animation: fly 5s ease-in-out infinite;
+
+  &__img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(120px, -60px) rotate(10deg);
+  }
+  50% {
+    transform: translate(-80px, 40px) rotate(-8deg);
+  }
+  75% {
+    transform: translate(60px, 90px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}

@@ -9,8 +9,8 @@
   width: 148px;
   height: 226px;
   z-index: 3;
-  bottom: -22px;
-  left: -22px;
+  bottom: -11px;
+  left: -11px;
   background-color: var(--color-secondary);
   border: 1px solid var(--color-primary);
   opacity: 0;
@@ -19,6 +19,17 @@
     opacity 0.2s ease,
     visibility 0.2s ease;
 
+  @media screen and (min-width: $bp-tablet) {
+    padding: 13px;
+    font-size: 9px;
+    line-height: 1.25;
+    border-radius: 20px;
+    width: 197px;
+    height: 301px;
+    bottom: -12px;
+    left: -12px;
+  }
+
   @media screen and (min-width: $bp-desktop) {
     padding: 20px;
     font-size: 14px;
@@ -26,6 +37,8 @@
     border-radius: 20px;
     width: 295px;
     height: 452px;
+    bottom: -22px;
+    left: -22px;
   }
 
   & span {

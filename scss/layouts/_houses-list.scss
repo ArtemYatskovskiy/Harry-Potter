@@ -1,20 +1,52 @@
 .houses-list {
-  margin-bottom: 25px;
   display: flex;
-  border: 1px solid #d9d9d9;
-  border-radius: 50px;
-  width: 100%;
-  max-width: 620px;
-  height: 40px;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  @media screen and (min-width: $bp-desktop) {
-    margin-bottom: 50px;
-    border-radius: 100px;
+  &__content {
+    margin-bottom: 25px;
+    display: flex;
+    border: 1px solid #d9d9d9;
+    border-radius: 50px;
     width: 100%;
-    max-width: 1240px;
-    height: 79px;
+    max-width: 620px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: scroll;
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 33px;
+      border-radius: 67px;
+      width: 100%;
+      max-width: 827px;
+      height: 53px;
+      overflow: hidden;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 50px;
+      border-radius: 100px;
+      width: 100%;
+      max-width: 1240px;
+      height: 79px;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: 17px;
+    height: 100%;
+    max-height: 19px;
+
+    @media screen and (min-width: $bp-tablet) {
+      max-width: 23px;
+      max-height: 25px;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      max-width: 35px;
+      max-height: 38px;
+    }
   }
 
   &__btn {
@@ -39,6 +71,16 @@
     transition:
       color 0.2s,
       background 0.2s;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 20px;
+      gap: 7px;
+      height: 53px;
+      width: 187px;
+      border-radius: 67px;
+      font-size: 12px;
+      line-height: 1.25;
+    }
 
     @media screen and (min-width: $bp-desktop) {
       padding: 0 30px;

@@ -15,6 +15,9 @@
             <h1 class="hero-section__title">
               Ласкаво просимо у світ Гаррі Поттера
             </h1>
+            <div class="snich">
+              <img class="snich__img" src="./images/snich.png" alt="Снітч" />
+            </div>
             <button class="btn" id="hero-btn">Показати всіх персонажів</button>
           </div>
         </div>
@@ -59,53 +62,53 @@
       <section class="change-section is-hidden" id="change-section">
         <div class="container">
           <h1 class="change-section__title" id="change-title"></h1>
-          <ul class="houses-list is-hidden" id="houses-list">
-            <li>
-              <button class="houses-list__btn active" id="gryffindor-btn">
-                <img
-                  src="./images/gryffindor-logo.svg"
-                  alt="Ґрифіндор логотип"
-                  width="35"
-                  height="38"
-                />Gryffindor
-              </button>
-            </li>
-            <li>
-              <button class="houses-list__btn" id="slytherin-btn">
-                <img
-                  src="./images/slytherin-logo.svg"
-                  alt="Слизерин логотип"
-                  width="35"
-                  height="38"
-                />Slytherin
-              </button>
-            </li>
-            <li>
-              <button class="houses-list__btn" id="ravenclaw-btn">
-                <img
-                  src="./images/ravenclaw-logo.svg"
-                  alt="Рейвенклов логотип"
-                  width="35"
-                  height="38"
-                />Ravenclaw
-              </button>
-            </li>
-            <li>
-              <button class="houses-list__btn" id="hufflepuff-btn">
-                <img
-                  src="./images/hufflepuff-logo.svg"
-                  alt="Гафелпаф логотип"
-                  width="35"
-                  height="38"
-                />Hufflepuff
-              </button>
-            </li>
-          </ul>
+          <div class="houses-list">
+            <ul class="houses-list__content is-hidden" id="houses-list">
+              <li>
+                <button class="houses-list__btn active" id="gryffindor-btn">
+                  <img
+                    class="houses-list__logo"
+                    src="./images/gryffindor-logo.svg"
+                    alt="Ґрифіндор логотип"
+                  />Gryffindor
+                </button>
+              </li>
+              <li>
+                <button class="houses-list__btn" id="slytherin-btn">
+                  <img
+                    class="houses-list__logo"
+                    src="./images/slytherin-logo.svg"
+                    alt="Слизерин логотип"
+                  />Slytherin
+                </button>
+              </li>
+              <li>
+                <button class="houses-list__btn" id="ravenclaw-btn">
+                  <img
+                    class="houses-list__logo"
+                    src="./images/ravenclaw-logo.svg"
+                    alt="Рейвенклов логотип"
+                  />Ravenclaw
+                </button>
+              </li>
+              <li>
+                <button class="houses-list__btn" id="hufflepuff-btn">
+                  <img
+                    class="houses-list__logo"
+                    src="./images/hufflepuff-logo.svg"
+                    alt="Гафелпаф логотип"
+                  />Hufflepuff
+                </button>
+              </li>
+            </ul>
+          </div>
           <ul class="change-section__list" id="change-list"></ul>
-          <button class="load-more-btn btn" id="load-more-btn">
-            Завантажити більше
-          </button>
-          <button class="back-btn btn" id="back-btn">Назад</button>
+          <div class="btn-container">
+            <button class="load-more-btn btn" id="load-more-btn">
+              Завантажити більше
+            </button>
+            <button class="back-btn btn" id="back-btn">Назад</button>
+          </div>
         </div>
       </section>
     </main>
